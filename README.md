@@ -38,7 +38,7 @@ It feels like guidance from a trusted elder — not a technical chatbot.
 - AI: Groq API (LLaMA 3.3 70B)  
 - Voice: Web Speech API  
 - Storage: sessionStorage  
-- Deployment: Vercel  
+- Deployment: Netlify 
 
 
 ## 🎬 Demo
