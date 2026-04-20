@@ -1,0 +1,30 @@
+.dashboard { padding: 14px 12px; overflow-y: auto; flex: 1; background: #f2f4f3; display: flex; flex-direction: column; gap: 12px; }
+.dash-card { background: white; border-radius: 18px; padding: 18px 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.dash-goal-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.dash-goal-icon { font-size: 32px; }
+.dash-goal-label { font-size: 17px; font-weight: 800; color: #1a1a1a; }
+.dash-target { font-size: 12px; color: #888; margin-top: 2px; }
+.progress-track { background: #f0f0f0; border-radius: 99px; height: 14px; overflow: hidden; margin-bottom: 6px; }
+.progress-fill { height: 100%; border-radius: 99px; transition: width 0.7s cubic-bezier(0.4,0,0.2,1); min-width: 4px; }
+.progress-meta { display: flex; justify-content: space-between; font-size: 12px; color: #888; margin-bottom: 12px; }
+.dash-input-row { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #555; margin-bottom: 12px; }
+.dash-input { border: 1.5px solid #ddd; border-radius: 10px; padding: 6px 10px; width: 120px; font-size: 14px; font-family: inherit; outline: none; }
+.dash-input:focus { border-color: #1a6b3c; }
+.dash-eta { background: #e8f5e9; border-radius: 12px; padding: 10px 14px; font-size: 13px; color: #1a6b3c; line-height: 1.5; font-weight: 500; }
+.dash-section-title { font-size: 15px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.dash-ai-badge { font-size: 10px; font-weight: 600; background: #cc785c; color: white; padding: 2px 8px; border-radius: 99px; }
+.dash-stat-row { display: flex; gap: 8px; }
+.dash-stat { flex: 1; background: #f7faf8; border-radius: 12px; padding: 12px 8px; text-align: center; border: 1px solid #e8f0eb; }
+.dash-stat-value { font-size: 15px; font-weight: 800; color: #1a6b3c; }
+.dash-stat-label { font-size: 11px; color: #999; margin-top: 3px; }
+.dash-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.dash-chip { background: #e8f5e9; border: 1.5px solid #b2dfcc; color: #1a6b3c; font-size: 13px; font-weight: 600; padding: 6px 14px; border-radius: 99px; }
+.tips-loading { display: flex; align-items: center; gap: 4px; padding: 8px 0; }
+.tip-dot { width: 8px; height: 8px; background: #1a6b3c; border-radius: 50%; display: inline-block; animation: tipBounce 1s infinite; }
+.tip-dot:nth-child(2) { animation-delay: 0.15s; }
+.tip-dot:nth-child(3) { animation-delay: 0.3s; }
+@keyframes tipBounce { 0%,100%{opacity:0.3;transform:scale(0.8)} 50%{opacity:1;transform:scale(1.1)} }
+.tips-loading-text { font-size: 13px; color: #999; margin-left: 6px; }
+.dash-tip { font-size: 14px; color: #333; padding: 9px 0; border-bottom: 1px solid #f2f2f2; line-height: 1.55; }
+.dash-tip:last-child { border-bottom: none; }
+.dash-disclaimer { font-size: 11px; color: #bbb; text-align: center; padding: 4px; }
