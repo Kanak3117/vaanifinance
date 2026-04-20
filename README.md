@@ -48,8 +48,7 @@ It feels like guidance from a trusted elder — not a technical chatbot.
 **What to try:**
 1. Choose language (हिंदी/தமிழ்/বাংলা/मराठी)
 2. Ask: “FD क्या है?”
-3. Use voice button 🎤
-4. Check schemes & calculator
+3. Check schemes & calculator
 
 📱 Mobile-friendly | ⚡ Fast | 🌐 Multilingual
 
