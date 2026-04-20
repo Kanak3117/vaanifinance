@@ -42,8 +42,15 @@ It feels like guidance from a trusted elder — not a technical chatbot.
 
 
 ## 🌐 Live Demo
-👉 https://your-vercel-link
-📱 Works best on mobile devices
+
+👉 https://keen-malabi-7a6294.netlify.app
+
+### Try these:
+- “FD क्या है?”
+- “SIP समझाओ”
+- ₹500–₹2000 savings select करके recommendation देखें
+
+📱 Best experienced on mobile
 
 
 ## 🚀 Setup
