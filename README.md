@@ -43,7 +43,7 @@ It feels like guidance from a trusted elder — not a technical chatbot.
 
 ## 🎬 Demo
 
-🔗 Live App: https://keen-malabi-7a6294.netlify.app
+🔗 Live App: https://jolly-salmiakki-0c47c3.netlify.app/
 
 **What to try:**
 1. Choose language (हिंदी/தமிழ்/বাংলা/मराठी)
