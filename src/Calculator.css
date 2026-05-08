@@ -1,51 +1,65 @@
+/* ═══════════════════════════════════════════════
+   Calculator.css — Pastel Finance Clean System
+═══════════════════════════════════════════════ */
+
 .calc-wrap {
   padding: 16px 14px;
   overflow-y: auto;
 }
 
 .calc-title {
-  font-size: 17px;
-  font-weight: 700;
-  color: #1a6b3c;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--sage-700, #2d6a4f);
   margin-bottom: 14px;
+  letter-spacing: -0.2px;
 }
 
 .calc-tabs {
   display: flex;
   gap: 6px;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
   flex-wrap: wrap;
 }
 
 .calc-tab {
   padding: 6px 14px;
   border-radius: 99px;
-  border: 1.5px solid #c0d8c8;
-  background: white;
-  font-size: 13px;
+  border: 1.5px solid var(--border, #deeade);
+  background: var(--warm-gray, #f7f5f1);
+  font-size: 12.5px;
   font-weight: 600;
   cursor: pointer;
-  color: #555;
-  transition: all 0.2s;
+  color: var(--text-secondary, #4a6858);
+  transition: all 0.18s ease;
+}
+
+.calc-tab:hover {
+  background: var(--sage-50, #f0faf2);
+  border-color: var(--sage-300, #95d5b2);
+  color: var(--sage-700, #2d6a4f);
 }
 
 .calc-tab.active {
-  background: #1a6b3c;
+  background: var(--sage-700, #2d6a4f);
   color: white;
-  border-color: #1a6b3c;
+  border-color: var(--sage-700, #2d6a4f);
+  box-shadow: 0 3px 10px rgba(45,106,79,0.3);
 }
 
 .calc-desc {
   font-size: 12px;
-  color: #777;
-  margin-bottom: 16px;
+  color: var(--text-muted, #8aab97);
+  margin-bottom: 18px;
+  line-height: 1.5;
 }
 
 .calc-risk {
-  color: #e65100;
-  font-weight: 600;
+  color: #d97706;
+  font-weight: 700;
 }
 
+/* ── Sliders ── */
 .calc-row {
   margin-bottom: 18px;
 }
@@ -53,37 +67,50 @@
 .calc-label {
   display: flex;
   justify-content: space-between;
-  font-size: 13px;
-  color: #444;
+  font-size: 12.5px;
+  color: var(--text-secondary, #4a6858);
   font-weight: 500;
   margin-bottom: 6px;
 }
 
 .calc-val {
-  font-weight: 700;
-  color: #1a6b3c;
+  font-weight: 800;
+  color: var(--sage-600, #40916c);
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--sage-600, #40916c);
+  height: 4px;
+  border-radius: 99px;
 }
 
 .calc-minmax {
   display: flex;
   justify-content: space-between;
-  font-size: 11px;
-  color: #aaa;
+  font-size: 10.5px;
+  color: var(--text-light, #b3c9be);
   margin-top: 4px;
 }
 
+/* ── Result Card ── */
 .calc-result {
-  background: #f0faf3;
-  border-radius: 16px;
-  padding: 16px;
-  border: 1.5px solid #b2dfcc;
+  background: var(--sage-50, #f0faf2);
+  border-radius: 18px;
+  padding: 18px 16px;
+  border: 1.5px solid var(--sage-200, #b7e4c7);
   margin-top: 8px;
+}
+
+.dark .calc-result {
+  background: #0a1a0e;
+  border-color: #1a3020;
 }
 
 .calc-result-row {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .calc-stat {
@@ -92,54 +119,59 @@
 }
 
 .calc-stat-label {
-  font-size: 11px;
-  color: #888;
+  font-size: 10.5px;
+  color: var(--text-muted, #8aab97);
   margin-bottom: 4px;
+  font-weight: 500;
 }
 
 .calc-stat-val {
   font-size: 15px;
   font-weight: 800;
-  color: #333;
+  color: var(--text-primary, #1c2b22);
 }
 
-.calc-stat-val.gain    { color: #1a6b3c; }
-.calc-stat-val.maturity { color: #1565c0; font-size: 17px; }
+.calc-stat-val.gain     { color: var(--sage-600, #40916c); }
+.calc-stat-val.maturity { color: #1565c0; font-size: 18px; letter-spacing: -0.5px; }
 
+/* ── Progress Bar ── */
 .calc-bar-wrap {
   display: flex;
-  height: 28px;
-  border-radius: 8px;
+  height: 26px;
+  border-radius: 10px;
   overflow: hidden;
   margin-bottom: 10px;
+  background: var(--warm-gray, #f7f5f1);
+  border: 1px solid var(--border-light, #edf4ed);
 }
 
 .calc-bar-invested {
-  background: #a5d6a7;
+  background: var(--sage-200, #b7e4c7);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
-  font-weight: 600;
-  color: #1a6b3c;
+  font-size: 9.5px;
+  font-weight: 700;
+  color: var(--sage-800, #1e5c3e);
   transition: width 0.5s ease;
   min-width: 50px;
 }
 
 .calc-bar-gain {
   flex: 1;
-  background: #1a6b3c;
+  background: var(--sage-600, #40916c);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
-  font-weight: 600;
+  font-size: 9.5px;
+  font-weight: 700;
   color: white;
 }
 
 .calc-disclaimer {
   font-size: 11px;
-  color: #e65100;
+  color: #d97706;
   text-align: center;
-  margin-top: 6px;
+  margin-top: 8px;
+  font-weight: 500;
 }

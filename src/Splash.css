@@ -1,24 +1,41 @@
+/* ═══════════════════════════════════════════════
+   Splash.css — Pastel Finance Clean System
+═══════════════════════════════════════════════ */
+
 .splash {
   position: fixed;
   inset: 0;
-  background: #1a6b3c;
+  background: var(--sage-800, #1e5c3e);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
   overflow: hidden;
 }
+
+/* Soft organic background circles */
 .splash::before {
   content: '';
   position: absolute;
-  width: 400px;
-  height: 400px;
+  width: 480px;
+  height: 480px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(255,255,255,0.07) 0%, transparent 65%);
+  top: -60px;
+  right: -80px;
 }
+
+.splash::after {
+  content: '';
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 65%);
+  bottom: -80px;
+  left: -60px;
+}
+
 .splash-content {
   display: flex;
   flex-direction: column;
@@ -28,59 +45,70 @@
   z-index: 1;
   animation: splashIn 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
+
 @keyframes splashIn {
-  from { opacity: 0; transform: translateY(24px) scale(0.95); }
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
   to   { opacity: 1; transform: translateY(0) scale(1); }
 }
+
 .splash-icon {
-  font-size: 68px;
-  margin-bottom: 6px;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));
-  animation: iconFloat 3s ease-in-out infinite;
+  font-size: 60px;
+  margin-bottom: 4px;
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,0.2));
+  animation: iconFloat 3.5s ease-in-out infinite;
 }
+
 @keyframes iconFloat {
   0%, 100% { transform: translateY(0); }
   50%       { transform: translateY(-6px); }
 }
+
 .splash-title {
-  font-size: 34px;
+  font-size: 30px;
   font-weight: 800;
   color: white;
-  letter-spacing: 0.5px;
+  letter-spacing: -0.5px;
 }
+
 .splash-sub {
-  font-size: 15px;
-  color: rgba(255,255,255,0.88);
-  font-family: 'Hind', sans-serif;
+  font-size: 14px;
+  color: rgba(255,255,255,0.82);
+  font-weight: 400;
 }
+
 .splash-langs {
-  font-size: 13px;
-  color: rgba(255,255,255,0.55);
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
   margin-top: 2px;
   letter-spacing: 1.5px;
 }
+
 .splash-loader {
-  width: 180px;
+  width: 160px;
   height: 3px;
-  background: rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.16);
   border-radius: 99px;
   overflow: hidden;
-  margin-top: 28px;
+  margin-top: 26px;
 }
+
 .splash-bar {
   height: 100%;
-  background: white;
+  background: rgba(255,255,255,0.9);
   border-radius: 99px;
   animation: load 2.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
+
 @keyframes load {
   0%   { width: 0%; }
-  60%  { width: 75%; }
+  60%  { width: 72%; }
   100% { width: 100%; }
 }
+
 .splash-tagline {
-  font-size: 11px;
-  color: rgba(255,255,255,0.4);
-  margin-top: 20px;
+  font-size: 10.5px;
+  color: rgba(255,255,255,0.35);
+  margin-top: 18px;
   letter-spacing: 0.5px;
+  font-weight: 500;
 }

@@ -4,34 +4,66 @@ import { generateQuizQuestion } from "./api/groq";
 const FALLBACK_QUESTIONS = {
   hi: [
     {
-      question: "FD में पैसा कितना सुरक्षित है?",
+      question: "सावधि जमा (FD) में पैसा कितना सुरक्षित है?",
       options: ["A) बिल्कुल नहीं", "B) थोड़ा", "C) पूरी तरह", "D) पता नहीं"],
       correct: 2,
-      explanation: "FD में पैसा पूरी तरह सुरक्षित होता है — DICGC द्वारा ₹5 लाख तक insured होता है।",
+      explanation: "सावधि जमा में पैसा पूरी तरह सुरक्षित होता है — जमा बीमा निगम (DICGC) द्वारा ₹5 लाख तक बीमित होता है।",
     },
     {
       question: "PPF खाता कितने साल के लिए होता है?",
       options: ["A) 5 साल", "B) 10 साल", "C) 15 साल", "D) 20 साल"],
       correct: 2,
-      explanation: "PPF का lock-in period 15 साल होता है, लेकिन आप इसे extend कर सकते हैं।",
+      explanation: "PPF की जमाबंदी अवधि 15 साल होती है, लेकिन आप इसे आगे बढ़ा सकते हैं।",
     },
     {
-      question: "Sukanya Samridhi Yojana किसके लिए है?",
+      question: "सुकन्या समृद्धि योजना किसके लिए है?",
       options: ["A) बेटों के लिए", "B) बेटियों के लिए", "C) बुज़ुर्गों के लिए", "D) किसानों के लिए"],
       correct: 1,
-      explanation: "Sukanya Samridhi Yojana 10 साल से कम उम्र की बेटियों के लिए है, इसमें 8.2% ब्याज मिलता है।",
+      explanation: "सुकन्या समृद्धि योजना 10 साल से कम उम्र की बेटियों के लिए है, इसमें 8.2% ब्याज मिलता है।",
     },
     {
-      question: "SIP में पैसा कहाँ जाता है?",
-      options: ["A) बैंक FD में", "B) Post Office में", "C) Mutual Fund में", "D) Government Bond में"],
+      question: "व्यवस्थित निवेश योजना (SIP) में पैसा कहाँ जाता है?",
+      options: ["A) बैंक सावधि जमा में", "B) डाकघर में", "C) म्यूचुअल फंड में", "D) सरकारी बॉन्ड में"],
       correct: 2,
-      explanation: "SIP (Systematic Investment Plan) के ज़रिए पैसा Mutual Fund में जाता है, जो बाज़ार पर निर्भर होता है।",
+      explanation: "व्यवस्थित निवेश योजना (SIP) के ज़रिए पैसा म्यूचुअल फंड में जाता है, जो बाज़ार पर निर्भर होता है।",
     },
     {
-      question: "PM Jan Dhan Yojana में कितना बीमा मिलता है?",
+      question: "प्रधानमंत्री जन धन योजना में कितना बीमा मिलता है?",
       options: ["A) ₹50,000", "B) ₹1 लाख", "C) ₹2 लाख", "D) ₹5 लाख"],
       correct: 2,
-      explanation: "PM Jan Dhan Yojana में ₹2 लाख का accidental insurance बिल्कुल मुफ्त मिलता है।",
+      explanation: "प्रधानमंत्री जन धन योजना में ₹2 लाख का दुर्घटना बीमा बिल्कुल मुफ्त मिलता है।",
+    },
+  ],
+  hl: [
+    {
+      question: "FD mein paisa kitna safe hai?",
+      options: ["A) Bilkul nahi", "B) Thoda", "C) Poori tarah", "D) Pata nahi"],
+      correct: 2,
+      explanation: "FD mein paisa poori tarah safe hota hai — DICGC ke zariye ₹5 lakh tak insured hota hai.",
+    },
+    {
+      question: "PPF account kitne saal ke liye hota hai?",
+      options: ["A) 5 saal", "B) 10 saal", "C) 15 saal", "D) 20 saal"],
+      correct: 2,
+      explanation: "PPF mein 15 saal ka lock-in hota hai, lekin aap isko aage badha sakte ho.",
+    },
+    {
+      question: "Sukanya Samridhi Yojana kiske liye hai?",
+      options: ["A) Beton ke liye", "B) Betiyon ke liye", "C) Buzurgon ke liye", "D) Kisanon ke liye"],
+      correct: 1,
+      explanation: "Sukanya Samridhi Yojana 10 saal se kam umra ki betiyon ke liye hai, ismein 8.2% byaj milta hai.",
+    },
+    {
+      question: "SIP mein paisa kahan jaata hai?",
+      options: ["A) Bank FD mein", "B) Post Office mein", "C) Mutual Fund mein", "D) Sarkaari Bond mein"],
+      correct: 2,
+      explanation: "SIP ke zariye paisa Mutual Fund mein jaata hai, jo market par nirbhar hota hai.",
+    },
+    {
+      question: "PM Jan Dhan Yojana mein kitna bima milta hai?",
+      options: ["A) ₹50,000", "B) ₹1 lakh", "C) ₹2 lakh", "D) ₹5 lakh"],
+      correct: 2,
+      explanation: "PM Jan Dhan Yojana mein ₹2 lakh ka durghatna bima bilkul muft milta hai.",
     },
   ],
   en: [
@@ -165,24 +197,31 @@ const FALLBACK_QUESTIONS = {
 };
 
 const T = {
-  title:      { hi: "🎯 फाइनेंस क्विज़", ta: "🎯 நிதி வினாடி வினா", bn: "🎯 ফাইন্যান্স কুইজ", mr: "🎯 फायनान्स क्विझ", en: "🎯 Finance Quiz" },
-  score:      { hi: "स्कोर", ta: "மதிப்பெண்", bn: "স্কোর", mr: "गुण", en: "Score" },
-  correct:    { hi: "✅ सही जवाब!", ta: "✅ சரியான பதில்!", bn: "✅ সঠিক উত্তর!", mr: "✅ बरोबर उत्तर!", en: "✅ Correct!" },
-  wrong:      { hi: "❌ गलत। सही था:", ta: "❌ தவறு. சரியானது:", bn: "❌ ভুল। সঠিক ছিল:", mr: "❌ चुकीचे. बरोबर होते:", en: "❌ Wrong. Correct answer:" },
-  next:       { hi: "अगला सवाल →", ta: "அடுத்த கேள்வி →", bn: "পরের প্রশ্ন →", mr: "पुढील प्रश्न →", en: "Next Question →" },
-  finish:     { hi: "नतीजा देखें 🎉", ta: "முடிவு பார்க்க 🎉", bn: "ফলাফল দেখুন 🎉", mr: "निकाल पाहा 🎉", en: "See Results 🎉" },
-  restart:    { hi: "फिर खेलें 🔄", ta: "மீண்டும் விளையாடு 🔄", bn: "আবার খেলুন 🔄", mr: "पुन्हा खेळा 🔄", en: "Play Again 🔄" },
-  loading:    { hi: "सवाल आ रहा है...", ta: "கேள்வி வருகிறது...", bn: "প্রশ্ন আসছে...", mr: "प्रश्न येत आहे...", en: "Loading question..." },
-  great:      { hi: "शाबाश! आप फाइनेंस एक्सपर्ट हैं 🏆", ta: "சாபாஷ்! நீங்கள் நிதி நிபுணர் 🏆", bn: "শাবাশ! আপনি ফাইন্যান্স এক্সপার্ট 🏆", mr: "शाबास! तुम्ही फायनान्स तज्ञ आहात 🏆", en: "Excellent! You're a finance expert 🏆" },
-  good:       { hi: "अच्छा! थोड़ा और सीखें 💪", ta: "நல்லது! இன்னும் கற்றுக்கொள்ளுங்கள் 💪", bn: "ভালো! আরও একটু শিখুন 💪", mr: "छान! थोडं आणखी शिका 💪", en: "Good! Keep learning 💪" },
-  keep:       { hi: "कोशिश जारी रखें! FD से शुरू करें 📚", ta: "தொடர்ந்து முயற்சியுங்கள்! FD-இல் தொடங்குங்கள் 📚", bn: "চেষ্টা চালিয়ে যান! FD দিয়ে শুরু করুন 📚", mr: "प्रयत्न सुरू ठेवा! FD पासून सुरुवात करा 📚", en: "Keep trying! Start with FD basics 📚" },
-  outOf:      { hi: "में से", ta: "இல்", bn: "এর মধ্যে", mr: "पैकी", en: "out of" },
-  q:          { hi: "सवाल", ta: "கேள்வி", bn: "প্রশ্ন", mr: "प्रश्न", en: "Q" },
+  title:      { hi: "🎯 पैसे की क्विज़", ta: "🎯 நிதி வினாடி வினா", bn: "🎯 অর্থ কুইজ", mr: "🎯 पैशाची क्विझ", en: "🎯 Finance Quiz", hl: "🎯 Paisa Quiz" },
+  score:      { hi: "अंक", ta: "மதிப்பெண்", bn: "নম্বর", mr: "गुण", en: "Score", hl: "Score" },
+  correct:    { hi: "✅ सही जवाब!", ta: "✅ சரியான பதில்!", bn: "✅ সঠিক উত্তর!", mr: "✅ बरोबर उत्तर!", en: "✅ Correct!", hl: "✅ Sahi jawab!" },
+  wrong:      { hi: "❌ गलत। सही जवाब था:", ta: "❌ தவறு. சரியானது:", bn: "❌ ভুল। সঠিক ছিল:", mr: "❌ चुकीचे. बरोबर होते:", en: "❌ Wrong. Correct answer:", hl: "❌ Galat. Sahi jawab tha:" },
+  next:       { hi: "अगला सवाल →", ta: "அடுத்த கேள்வி →", bn: "পরের প্রশ্ন →", mr: "पुढील प्रश्न →", en: "Next Question →", hl: "Agla sawaal →" },
+  finish:     { hi: "नतीजा देखें 🎉", ta: "முடிவு பார்க்க 🎉", bn: "ফলাফল দেখুন 🎉", mr: "निकाल पाहा 🎉", en: "See Results 🎉", hl: "Result dekho 🎉" },
+  restart:    { hi: "फिर खेलें 🔄", ta: "மீண்டும் விளையாடு 🔄", bn: "আবার খেলুন 🔄", mr: "पुन्हा खेळा 🔄", en: "Play Again 🔄", hl: "Phir khelo 🔄" },
+  loading:    { hi: "सवाल आ रहा है...", ta: "கேள்வி வருகிறது...", bn: "প্রশ্ন আসছে...", mr: "प्रश्न येत आहे...", en: "Loading question...", hl: "Sawaal aa raha hai..." },
+  great:      { hi: "शाबाश! आप पैसों के माहिर हैं 🏆", ta: "சாபாஷ்! நீங்கள் நிதி நிபுணர் 🏆", bn: "শাবাশ! আপনি অর্থনীতিতে দক্ষ 🏆", mr: "शाबास! तुम्ही पैशांचे तज्ञ आहात 🏆", en: "Excellent! You're a finance expert 🏆", hl: "Shabash! Aap paison ke ustaad ho 🏆" },
+  good:       { hi: "अच्छा! थोड़ा और सीखें 💪", ta: "நல்லது! இன்னும் கற்றுக்கொள்ளுங்கள் 💪", bn: "ভালো! আরও একটু শিখুন 💪", mr: "छान! थोडं आणखी शिका 💪", en: "Good! Keep learning 💪", hl: "Acha! Thoda aur seekho 💪" },
+  keep:       { hi: "कोशिश जारी रखें! सावधि जमा से शुरू करें 📚", ta: "தொடர்ந்து முயற்சியுங்கள்! FD-இல் தொடங்குங்கள் 📚", bn: "চেষ্টা চালিয়ে যান! FD দিয়ে শুরু করুন 📚", mr: "प्रयत्न सुरू ठेवा! FD पासून सुरुवात करा 📚", en: "Keep trying! Start with FD basics 📚", hl: "Koshish jaari rakho! FD se shuru karo 📚" },
+  outOf:      { hi: "में से", ta: "இல்", bn: "এর মধ্যে", mr: "पैकी", en: "out of", hl: "mein se" },
+  q:          { hi: "सवाल", ta: "கேள்வி", bn: "প্রশ্ন", mr: "प्रश्न", en: "Q", hl: "Q" },
 };
 
-export default function Quiz({ lang, onClose }) {
+export default function Quiz({ lang, onClose, darkMode = false }) {
   const lc = lang?.code || "hi";
-  const questions = FALLBACK_QUESTIONS[lc] || FALLBACK_QUESTIONS.hi;
+  const [questions] = useState(() => {
+    const q = [...(FALLBACK_QUESTIONS[lc] || FALLBACK_QUESTIONS.hi)];
+    for (let i = q.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [q[i], q[j]] = [q[j], q[i]];
+    }
+    return q;
+  });
 
   const [idx, setIdx]         = useState(0);
   const [selected, setSelected] = useState(null);
@@ -244,7 +283,7 @@ export default function Quiz({ lang, onClose }) {
               background: "#1a6b3c", border: "none", borderRadius: 12,
               padding: "10px 20px", fontSize: 14, fontWeight: 700, color: "white",
               cursor: "pointer", fontFamily: "inherit",
-            }}>← Back</button>
+            }}>{lc==="hi"?"← वापस जाएं":lc==="ta"?"← திரும்பு":lc==="bn"?"← ফিরে যান":lc==="mr"?"← परत जा":lc==="hl"?"← Wapas jao":"← Back"}</button>
           )}
         </div>
       </div>

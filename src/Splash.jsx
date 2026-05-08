@@ -1,14 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import "./Splash.css";
- 
+
 const LANGUAGES = [
   { code: "hi", label: "हिन्दी" },
   { code: "ta", label: "தமிழ்" },
   { code: "bn", label: "বাংলা" },
   { code: "mr", label: "मराठी" },
   { code: "en", label: "English" },
+  { code: "hl", label: "Hinglish" },
 ];
- 
+
 const SPLASH_TEXT = {
   sub: {
     hi: "अपनी भाषा में — अपना पैसा समझो",
@@ -16,36 +17,50 @@ const SPLASH_TEXT = {
     bn: "আপনার ভাষায় — আপনার টাকা বুঝুন",
     mr: "तुमच्या भाषेत — तुमचे पैसे समजून घ्या",
     en: "Understand your money — in your language",
+    hl: "Apni boli mein — apna paisa samjho",
   },
   skip: {
-    hi: "छोड़ें →", ta: "தவிர் →", bn: "এড়িয়ে যান →", mr: "वगळा →", en: "Skip →",
+    hi: "छोड़ें →", ta: "தவிர் →", bn: "এড়িয়ে যান →", mr: "वगळा →", en: "Skip →", hl: "Skip →",
   },
 };
- 
+
+// ── Read saved language from localStorage (same key App.js uses) ──────────
+function getSavedLang() {
+  try {
+    const v = localStorage.getItem("vf_lang");
+    if (v) {
+      const parsed = JSON.parse(v);
+      if (LANGUAGES.find(l => l.code === parsed)) return parsed;
+    }
+  } catch {}
+  return "hi"; // default only if nothing saved
+}
+
 export default function Splash({ onDone }) {
-  const [selectedLang, setSelectedLang] = useState("hi");
-  const langRef = useRef("hi");
- 
+  const savedCode = getSavedLang();                    // ← reads localStorage
+  const [selectedLang, setSelectedLang] = useState(savedCode);
+  const langRef = useRef(savedCode);
+
   const handleSelect = (code) => {
     setSelectedLang(code);
     langRef.current = code;
   };
- 
+
   const handleDone = () => onDone(langRef.current);
- 
+
   useEffect(() => {
     const timer = setTimeout(handleDone, 2600);
     return () => clearTimeout(timer);
     // eslint-disable-next-line
   }, []);
- 
+
   return (
     <div className="splash">
       <div className="splash-content">
         <div className="splash-icon">💰</div>
         <div className="splash-title">VaaniFinance</div>
         <div className="splash-sub">{SPLASH_TEXT.sub[selectedLang]}</div>
- 
+
         {/* Language picker */}
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "center", marginTop: 14 }}>
           {LANGUAGES.map(l => (
@@ -61,11 +76,11 @@ export default function Splash({ onDone }) {
             </button>
           ))}
         </div>
- 
+
         <div className="splash-loader" style={{ marginTop: 22 }}>
           <div className="splash-bar" />
         </div>
- 
+
         {/* Skip button */}
         <button onClick={handleDone} style={{
           marginTop: 16, background: "rgba(255,255,255,0.18)",
@@ -75,7 +90,7 @@ export default function Splash({ onDone }) {
         }}>
           {SPLASH_TEXT.skip[selectedLang]}
         </button>
- 
+
         <div className="splash-tagline">Smart Financial Guidance for Bharat</div>
       </div>
     </div>
