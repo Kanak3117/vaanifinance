@@ -3,9 +3,9 @@ import { generateDashboardTips } from "./api/groq";
 import "./Dashboard.css";
 
 const GOAL_TARGETS = {
-  "Keep money safe":      { target: 10000,  icon: "🛡️", color: "#1a6b3c",
+  "Keep money safe":      { target: 500000,  icon: "🛡️", color: "#1a6b3c",
     label: { hi: "आपातकालीन फंड", ta: "அவசர நிதி",      bn: "জরুরি তহবিল",   mr: "आणीबाणी निधी",   en: "Emergency Fund",  hl: "Emergency Fund"  } },
-  "Children's education": { target: 100000, icon: "📚", color: "#1565c0",
+  "Children's education": { target: 500000, icon: "📚", color: "#1565c0",
     label: { hi: "शिक्षा फंड",     ta: "கல்வி நிதி",     bn: "শিক্ষা তহবিল",  mr: "शिक्षण निधी",    en: "Education Fund",  hl: "Education Fund"  } },
   "Build a home":         { target: 500000, icon: "🏠", color: "#6a1b9a",
     label: { hi: "घर फंड",         ta: "வீட்டு நிதி",    bn: "বাড়ির তহবিল",  mr: "गृह निधी",       en: "Home Fund",       hl: "Ghar Fund"       } },

@@ -38,7 +38,7 @@ const PARTNER_BANKS = [
       mr: "जास्तीत जास्त guaranteed परतावा हवा असलेल्यांसाठी",
       en: "For maximum guaranteed returns",
     },
-    url: "https://blostem.in/unity",
+    url: "https://blostem.com/unity",
     source: "Blostem - Unity SFB Partner Data",
   },
   {
@@ -203,28 +203,28 @@ const LABELS = {
   },
   steps: {
     hi: [
-      "ब्लॉस्टम ऐप डाउनलोड करें या blostem.in खोलें",
+      "ब्लॉस्टम ऐप डाउनलोड करें या blostem.comखोलें",
       "आधार + पैन से KYC करें",
       "यूनिटी, सूर्योदय, उत्कर्ष या बजाज फाइनेंस चुनें",
       "राशि और अवधि चुनें",
       "UPI या नेट बैंकिंग से भुगतान करें — हो गया! ✅",
     ],
     ta: [
-      "Blostem app download செய்யுங்கள் அல்லது blostem.in திறக்கவும்",
+      "Blostem app download செய்யுங்கள் அல்லது blostem.comதிறக்கவும்",
       "Aadhaar + PAN மூலம் KYC செய்யுங்கள்",
       "Unity, Suryoday, Utkarsh அல்லது Bajaj Finance தேர்ந்தெடுக்கவும்",
       "Amount மற்றும் tenure தேர்ந்தெடுக்கவும்",
       "UPI அல்லது Net Banking மூலம் payment செய்யுங்கள் — Done! ✅",
     ],
     bn: [
-      "Blostem app download করুন বা blostem.in খুলুন",
+      "Blostem app download করুন বা blostem.comখুলুন",
       "Aadhaar + PAN দিয়ে KYC করুন",
       "Unity, Suryoday, Utkarsh বা Bajaj Finance বেছে নিন",
       "Amount এবং tenure সিলেক্ট করুন",
       "UPI বা Net Banking দিয়ে payment করুন — Done! ✅",
     ],
     mr: [
-      "Blostem app download करा किंवा blostem.in उघडा",
+      "Blostem app download करा किंवा blostem.comउघडा",
       "Aadhaar + PAN ने KYC करा",
       "Unity, Suryoday, Utkarsh किंवा Bajaj Finance निवडा",
       "Amount आणि tenure निवडा",
