@@ -38,7 +38,7 @@ const PARTNER_BANKS = [
       mr: "जास्तीत जास्त guaranteed परतावा हवा असलेल्यांसाठी",
       en: "For maximum guaranteed returns",
     },
-    url: "https://blostem.com/unity",
+    url:  "https://theunitybank.com/",
     source: "Blostem - Unity SFB Partner Data",
   },
   {
@@ -71,7 +71,7 @@ const PARTNER_BANKS = [
       mr: "नियमित मासिक उत्पन्न हवे असलेल्यांसाठी",
       en: "For regular monthly income from FD",
     },
-    url: "https://blostem.in/suryoday",
+    url: "https://www.suryodaybank.com/",
     source: "Blostem - Suryoday SFB Partner Data",
   },
   {
@@ -104,7 +104,7 @@ const PARTNER_BANKS = [
       mr: "छोट्या बचतीने सुरुवात करणाऱ्या ग्रामीण गुंतवणूकदारांसाठी",
       en: "For rural investors starting with small savings",
     },
-    url: "https://blostem.in/utkarsh",
+    url: "https://www.utkarsh.bank/",
     source: "Blostem - Utkarsh SFB Partner Data",
   },
   {
@@ -138,7 +138,7 @@ const PARTNER_BANKS = [
       mr: "₹5,000+ गुंतवणूक करणाऱ्या premium investors साठी",
       en: "For premium investors with ₹5,000+",
     },
-    url: "https://blostem.in/bajaj",
+    url: "https://www.bajajfinserv.in/fixed-deposit",
     source: "Blostem - Bajaj Finance Partner Data",
   },
 ];
@@ -181,11 +181,11 @@ const LABELS = {
     en: "Minimum",
   },
   openBtn: {
-    hi: "ब्लॉस्टम से खोलें →",
-    ta: "Blostem மூலம் திறக்க →",
-    bn: "Blostem দিয়ে খুলুন →",
-    mr: "Blostem द्वारे उघडा →",
-    en: "Open via Blostem →",
+    hi: "आधिकारिक वेबसाइट खोलें →",
+    ta: "Official Website திறக்க →",
+    bn: "Official Website খুলুন →",
+    mr: "Official Website उघडा →",
+    en: "Visit Official Website →",
   },
   bestForLabel: {
     hi: "किसके लिए",
@@ -203,35 +203,35 @@ const LABELS = {
   },
   steps: {
     hi: [
-      "ब्लॉस्टम ऐप डाउनलोड करें या blostem.comखोलें",
+      "Partner platform खोलें और FD options देखें",
       "आधार + पैन से KYC करें",
       "यूनिटी, सूर्योदय, उत्कर्ष या बजाज फाइनेंस चुनें",
       "राशि और अवधि चुनें",
       "UPI या नेट बैंकिंग से भुगतान करें — हो गया! ✅",
     ],
     ta: [
-      "Blostem app download செய்யுங்கள் அல்லது blostem.comதிறக்கவும்",
+      "Partner platform திறந்து FD options பார்க்கவும்",
       "Aadhaar + PAN மூலம் KYC செய்யுங்கள்",
       "Unity, Suryoday, Utkarsh அல்லது Bajaj Finance தேர்ந்தெடுக்கவும்",
       "Amount மற்றும் tenure தேர்ந்தெடுக்கவும்",
       "UPI அல்லது Net Banking மூலம் payment செய்யுங்கள் — Done! ✅",
     ],
     bn: [
-      "Blostem app download করুন বা blostem.comখুলুন",
+      "Partner platform খুলে FD options দেখুন",
       "Aadhaar + PAN দিয়ে KYC করুন",
       "Unity, Suryoday, Utkarsh বা Bajaj Finance বেছে নিন",
       "Amount এবং tenure সিলেক্ট করুন",
       "UPI বা Net Banking দিয়ে payment করুন — Done! ✅",
     ],
     mr: [
-      "Blostem app download करा किंवा blostem.comउघडा",
+      "Partner platform उघडा आणि FD options पाहा",
       "Aadhaar + PAN ने KYC करा",
       "Unity, Suryoday, Utkarsh किंवा Bajaj Finance निवडा",
       "Amount आणि tenure निवडा",
       "UPI किंवा Net Banking ने payment करा — Done! ✅",
     ],
     en: [
-      "Download Blostem app or go to blostem.in",
+      "Open the partner platform and explore FD options",
       "Complete KYC with Aadhaar + PAN",
       "Choose Unity, Suryoday, Utkarsh or Bajaj Finance",
       "Select amount and tenure",
