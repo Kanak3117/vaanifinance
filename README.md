@@ -37,9 +37,6 @@ Users can ask questions in:
 - Bengali
 - Tamil
 - Marathi
-- Gujarati
-- Kannada
-- Telugu
 
 The platform responds in the user's preferred language with:
 ✅ Beginner-friendly explanations  
